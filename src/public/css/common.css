@@ -1,0 +1,13 @@
+.header {}
+
+.header__inner {
+  font-size: 40px;
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+h1 {
+  border-bottom: 1px solid #e0dfde;
+  color: #8B7969;
+}

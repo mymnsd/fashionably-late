@@ -1,0 +1,52 @@
+.contact-form__content {
+  max-width: 1230px;
+  margin: 0 auto;
+}
+
+.contact__ttl {
+  margin: 30px auto;
+}
+
+h2 {
+  color: #8b7969;
+  font-size: 35px;
+  text-align: center;
+}
+
+.form {
+  margin: 0 auto;
+  text-align: center;
+  width: 70%;
+}
+
+.form__group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form__group-ttl {}
+
+.form__label--item {}
+
+.form__label--required {
+  margin-left: 5px;
+  color: red;
+}
+
+.form__group-content {}
+
+.form__input--text {}
+
+.form__error {}
+
+.form__button {}
+
+.form__button-submit {
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 50px;
+  padding: 10px;
+  width: 30%;
+}
