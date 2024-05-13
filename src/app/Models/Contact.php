@@ -9,15 +9,24 @@ class Contact extends Model
 {
     use HasFactory;
 
+    protected $attributes = [
+        'category_id'=> 1,
+        'gender' => '男性',
+    ];
+
+
     protected $fillable = [
+        'category_id',
         'last_name',
         'first_name',
         'gender',
         'email',
         'tel',
-        'adress',
+        'address',
         'building',
-        'contact_type',
-        'detail'
+        'detail',
     ];
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }

@@ -18,7 +18,8 @@
             お名前
           </th>
           <td class="confirm-table__text">
-            <input type="text" name="name" value="{{ $contact['name'] }}" readonly>
+            <input type="text" name="last_name" value="{{ $contact['last_name']}}" readonly>
+            <input type="text" name="first_name" value="{{ $contact['first_name']}}" readonly>
           </td>
         </tr>
         <tr class="confrim-table__row">
@@ -26,7 +27,7 @@
             性別
           </th>
           <td class="confirm-table__text">
-            <input type="radio" name="gender" value="{{ $contact['gender'] }}" readonly>
+            <input type="text" name="gender" value="{{ $contact['gender'] }}" readonly>
           </td>
         </tr>
         <tr class="confrim-table__row">
@@ -43,6 +44,8 @@
           </th>
           <td class="confirm-table__text">
             <input type="text" name="tel" value="{{ $contact['tel'] }}" readonly>
+            <input type="text" name="tel" value="{{ $contact['tel'] }}" readonly>
+            <input type="text" name="tel" value="{{ $contact['tel'] }}" readonly>
           </td>
         </tr>
         <tr class="confrim-table__row">
@@ -50,7 +53,7 @@
             住所
           </th>
           <td class="confirm-table__text">
-            <input type="text" name="adress" value="{{ $contact['adress'] }}" readonly>
+            <input type="text" name="address" value="{{ $contact['address'] }}" readonly>
           </td>
         </tr>
         <tr class="confrim-table__row">
@@ -66,7 +69,7 @@
             お問い合わせの種類
           </th>
           <td class="confirm-table__text">
-            <input type="text" name="inquiry-type" value="{{ $contact['contact-type'] }}" readonly>
+            <input type="text" name="content" value="{{ $contact['content'] }}" readonly>
           </td>
         </tr>
         <tr class="confrim-table__row">
@@ -80,10 +83,12 @@
       </table>
     </div>
     <div class="form__button">
-      <button class="form__button-submit">
+      <button class="form__button-submit" type="submit">
         送信
       </button>
-      <a class="modify__link" href="/confirm">修正</a>
+      <div class="modify__button">
+        <a class="modify__link" href="/">修正</a>
+      </div>
     </div>
   </form>
 </div>
