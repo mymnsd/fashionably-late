@@ -37,9 +37,14 @@
         <span class="form__label--required">※</span>
       </div>
       <div class="form__group-content">
-        <input type="radio" name="gender" value="男性" checked>男性<br>
-        <input type="radio" name="gender" value="女性">女性<br>
-        <input type="radio" name="gender" value="その他">その他<br>
+        <input class="form__group-radio" id="male" type="radio" name="gender" value="1" {{ old('gender') == 1 ? 'checked' : '' }}>
+        <label class="form__group-label" for="male">男性</label>
+
+        <input class="form__group-radio" id="female" type="radio" name="gender" value="2" {{ old('gender') == 2 ? 'checked' : '' }}>
+        <label class="form__group-label" for="female">女性</label>
+
+        <input class="form__group-radio" id="other" type="radio" name="gender" value="3" {{ old('gender') == 3 ? 'checked' : '' }}>
+        <label class="form__group-label" for="other">その他</label>
       </div>
       <div class="form__error">
         @error('gender')
@@ -71,15 +76,21 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="text" name="tel" placeholder="080" value="{{ old('tel') }}">
+          <input type="text" name="tel1" placeholder="080" value="{{ old('tel1') }}">
           <span class="hyphen">-</span>
-          <input type="text" name="tel" placeholder="1234" value="{{ old('tel') }}">
+          <input type="text" name="tel2" placeholder="1234" value="{{ old('tel2') }}">
           <span class="hyphen">-</span>
-          <input type="text" name="tel" placeholder="5678" value="{{ old('tel') }}">
+          <input type="text" name="tel3" placeholder="5678" value="{{ old('tel3') }}">
         </div>
       </div>
       <div class="form__error">
-        @error('tel')
+        @error('tel1')
+        {{ $message }}
+        @enderror           
+        @error('tel2')
+        {{ $message }}
+        @enderror           
+        @error('tel3')
         {{ $message }}
         @enderror           
       </div>
@@ -119,8 +130,13 @@
         <span class="form__label--required">※</span>
       </div>
       <div class="form__group-content">
-        <select name="content">
-          <option value="1">選択してください</option>
+        <select class="form__group-content--select" name="content">
+          <option value="">選択してください</option>
+          @foreach($categories as $category)
+            <option value="{{ $category['id'] }}" @if(old('content') == $category->id) selected @endif>
+              {{ $category['content'] }}
+            </option>>
+          @endforeach
         </select>
       </div>
       <div class="form__error">

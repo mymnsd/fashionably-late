@@ -18,8 +18,11 @@
             お名前
           </th>
           <td class="confirm-table__text">
-            <input type="text" name="last_name" value="{{ $contact['last_name']}}" readonly>
-            <input type="text" name="first_name" value="{{ $contact['first_name']}}" readonly>
+            <input type="hidden" name="last_name" value="{{ $contact['last_name']}}" readonly>
+            <input type="hidden" name="first_name" value="{{ $contact['first_name']}}" readonly>
+            <?php
+            echo ($contact['last_name'] . '　' . $contact['first_name']);
+            ?>
           </td>
         </tr>
         <tr class="confrim-table__row">
@@ -27,7 +30,16 @@
             性別
           </th>
           <td class="confirm-table__text">
-            <input type="text" name="gender" value="{{ $contact['gender'] }}" readonly>
+            <input type="hidden" name="gender" value="{{ $contact['gender'] }}" readonly>
+            <?php
+              if ($contact['gender'] == '1') {
+                echo '男性';
+              } else if ($contact['gender'] == '2') {
+                echo '女性';
+              } else if($contact['gender'] == '3') {
+                echo 'その他';
+              }
+            ?>
           </td>
         </tr>
         <tr class="confrim-table__row">
@@ -44,8 +56,9 @@
           </th>
           <td class="confirm-table__text">
             <input type="text" name="tel" value="{{ $contact['tel'] }}" readonly>
-            <input type="text" name="tel" value="{{ $contact['tel'] }}" readonly>
-            <input type="text" name="tel" value="{{ $contact['tel'] }}" readonly>
+            <input type="hidden" name="tel1" value="{{ $contact['tel1'] }}" readonly>
+            <input type="hidden" name="tel2" value="{{ $contact['tel2'] }}" readonly>
+            <input type="hidden" name="tel3" value="{{ $contact['tel3'] }}" readonly>
           </td>
         </tr>
         <tr class="confrim-table__row">
@@ -69,7 +82,21 @@
             お問い合わせの種類
           </th>
           <td class="confirm-table__text">
-            <input type="text" name="content" value="{{ $contact['content'] }}" readonly>
+            <input type="hidden" name="content" value="{{ $contact['content'] }}" readonly>
+            <?php
+            // 数字を入れたらなぜかできた
+              if ($contact['content'] == '1') {
+                echo '商品のお届けについて';
+              } else if ($contact['content'] == '2') {
+                echo '商品の交換について';
+              } else if($contact['content'] == '3') {
+                echo '商品トラブル';
+              }else if($contact['content'] == '4') {
+                echo 'ショップへのお問い合わせ';
+              }else if($contact['content'] == '5') {
+                echo 'その他';
+              }
+            ?>
           </td>
         </tr>
         <tr class="confrim-table__row">
@@ -86,9 +113,7 @@
       <button class="form__button-submit" type="submit">
         送信
       </button>
-      <div class="modify__button">
-        <a class="modify__link" href="/">修正</a>
-      </div>
+        <button class="modify__link" type="submit" name="back" value="back">修正</button>
     </div>
   </form>
 </div>

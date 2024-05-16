@@ -9,14 +9,14 @@ class Contact extends Model
 {
     use HasFactory;
 
+    // 仮データ
     protected $attributes = [
         'category_id'=> 1,
-        'gender' => '男性',
+        'gender' => '1',
     ];
 
 
     protected $fillable = [
-        'category_id',
         'last_name',
         'first_name',
         'gender',
