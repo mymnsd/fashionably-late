@@ -1,13 +1,26 @@
-.header {}
+body{
+  color: #8B7969;
+}
+
+.header {
+  max-width: 1500px;
+  height: 100px;
+  border-bottom: 1px solid #e0dfde;
+}
 
 .header__inner {
   font-size: 40px;
-  max-width: 1230px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px 0;
 }
 
 h1 {
-  border-bottom: 1px solid #e0dfde;
   color: #8B7969;
+  font-size: 40px;
+  line-height: 1px;
+  text-align: center;
+  font-family: "Zen Antique", serif;
+  font-weight: 400;
+  font-style: normal;
 }

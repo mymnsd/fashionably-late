@@ -1,10 +1,15 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css.confirm.css') }}">
+<link rel="stylesheet" href="{{ asset('css/confirm.css') }}">
 @endsection
 
 @section('content')
+<header class="header">
+    <div class="header__inner">
+      <h1>FashionablyLate</h1>
+    </div>
+</header>
 <div class="confirm__content">
   <div class="confirm__ttl">
     <h2>Confirm</h2>
@@ -47,7 +52,7 @@
             メールアドレス
           </th>
           <td class="confirm-table__text">
-            <input type="text" name="email" value="{{ $contact['email'] }}" readonly>
+            <input class="confirm-table__input" type="text" name="email" value="{{ $contact['email'] }}" readonly>
           </td>
         </tr>
         <tr class="confrim-table__row">
@@ -55,7 +60,7 @@
             電話番号
           </th>
           <td class="confirm-table__text">
-            <input type="text" name="tel" value="{{ $contact['tel'] }}" readonly>
+            <input class="confirm-table__input" type="text" name="tel" value="{{ $contact['tel'] }}" readonly>
             <input type="hidden" name="tel1" value="{{ $contact['tel1'] }}" readonly>
             <input type="hidden" name="tel2" value="{{ $contact['tel2'] }}" readonly>
             <input type="hidden" name="tel3" value="{{ $contact['tel3'] }}" readonly>
@@ -66,7 +71,7 @@
             住所
           </th>
           <td class="confirm-table__text">
-            <input type="text" name="address" value="{{ $contact['address'] }}" readonly>
+            <input class="confirm-table__input" type="text" name="address" value="{{ $contact['address'] }}" readonly>
           </td>
         </tr>
         <tr class="confrim-table__row">
@@ -74,7 +79,7 @@
             建物名
           </th>
           <td class="confirm-table__text">
-            <input type="text" name="building" value="{{ $contact['building'] }}" readonly>
+            <input class="confirm-table__input" type="text" name="building" value="{{ $contact['building'] }}" readonly>
           </td>
         </tr>
         <tr class="confrim-table__row">
@@ -104,7 +109,7 @@
             お問い合わせ内容
           </th>
           <td class="confirm-table__text">
-            <input type="text" name="detail" value="{{ $contact['detail'] }}" readonly>
+            <input class="confirm-table__input" type="text" name="detail" value="{{ $contact['detail'] }}" readonly>
           </td>
         </tr>
       </table>
@@ -113,7 +118,7 @@
       <button class="form__button-submit" type="submit">
         送信
       </button>
-        <button class="modify__link" type="submit" name="back" value="back">修正</button>
+        <button class="modify__link" type="submit" name="back" value="back"><span class="modify__link--inner">修正</span></button>
     </div>
   </form>
 </div>

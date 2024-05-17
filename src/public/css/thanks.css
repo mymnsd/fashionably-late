@@ -1,22 +1,49 @@
 .thanks__content {
-  max-width: 1230px;
-  margin: 0 auto;
+  height: 100vh;
+  max-width: 1500px;
+  position: relative;
 }
 
-.thanks__ttl {
+.thanks__ttl{
+  color: #8b7969;
+  font-size: 200px;
+  opacity: 0.1;
+  position: absolute;
+  top: 25%;
+  left: 20%;
   text-align: center;
+  font-family: "Zen Antique", serif;
+  font-weight: 400;
+  font-style: normal;
+  
+}
+
+.thanks__message{
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+.thanks__message-content{
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .thanks__button {
   text-align: center;
 }
 
-.thanks__button-submit {
+.thanks-link{
   background-color: #8b7969;
-  border: none;
+  border-radius: 3px;
   color: #fff;
-  cursor: pointer;
-  height: 50px;
-  padding: 10px;
-  width: 30%;
+  padding: 10px 30px;
+  text-decoration: none;
+  font-family: "Zen Antique", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.thanks-link:hover{
+  opacity: 0.7;
 }
